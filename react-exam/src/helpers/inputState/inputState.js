@@ -10,5 +10,5 @@ export const inputInfo = [
       { label: "Female", value: "female" },
     ],
   },
-  { label: "validation", name: "validation", type: "checkbox", id: "checkbox" },
+  { label: "agreement", name: "validation", type: "checkbox", id: "checkbox" },
 ];

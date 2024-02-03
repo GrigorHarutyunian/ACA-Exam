@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { removeUser } from "../../firebase/service/removeUSers";
 import { columns } from "../../helpers/inputState/tableColumns";
+import "./Table.css";
 
 export const Table = ({ rows }) => {
   const dispatch = useDispatch();
@@ -30,7 +31,14 @@ export const Table = ({ rows }) => {
         checkboxSelection
         disableRowSelectionOnClick
       />
-      <Button onClick={() => removeUser(removedItem, dispatch)}>Remove</Button>
+
+      <Button
+        onClick={() => removeUser(removedItem, dispatch)}
+        variant="contained"
+        color="success"
+      >
+        Remove User
+      </Button>
     </Box>
   );
 };

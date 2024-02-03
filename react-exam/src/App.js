@@ -12,6 +12,8 @@ import { generateUserId } from "./helpers/generators/generateUserId";
 import { useEffect } from "react";
 import { getUsers } from "./firebase/service/getUser";
 import { Table } from "./components/Table/Table";
+import { Button } from "@mui/material";
+
 const App = () => {
   const modal = useSelector((store) => store.modal);
   const users = useSelector((store) => store.showUsers);
@@ -53,13 +55,15 @@ const App = () => {
           handleFormik={handleFormik}
         />
       </CSSTransition>
-      <button
-        className="openModal"
-        onClick={() => dispatch(changeModalState(true))}
-      >
-        Open Modal
-      </button>
+
       <Table rows={arrayUsers} />
+      <Button
+        style={{ position: "absolute", top: "1%", left: "10px" }}
+        onClick={() => dispatch(changeModalState(true))}
+        variant="contained"
+      >
+        Add friends
+      </Button>
     </div>
   );
 };

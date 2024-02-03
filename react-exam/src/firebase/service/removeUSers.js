@@ -17,6 +17,6 @@ export const removeUser = async (userArr, dispatch) => {
       console.log("No users");
     }
   } catch (error) {
-    console.error(error.message);
+    console.error(1, error.message);
   }
 };

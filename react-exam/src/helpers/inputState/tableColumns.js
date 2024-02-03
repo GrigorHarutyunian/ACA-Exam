@@ -11,7 +11,7 @@ export const columns = [
   },
   {
     field: "radioGroup",
-    headerName: "blask",
+    headerName: "gender",
     width: 300,
     editable: true,
   },
