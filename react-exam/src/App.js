@@ -11,7 +11,7 @@ import { addUser } from "./firebase/service/addUser";
 import { generateUserId } from "./helpers/generators/generateUserId";
 import { useEffect } from "react";
 import { getUsers } from "./firebase/service/getUser";
-
+import { Table } from "./components/Table/Table";
 const App = () => {
   const modal = useSelector((store) => store.modal);
   const users = useSelector((store) => store.showUsers);
@@ -23,7 +23,8 @@ const App = () => {
 
   const handleFormik = async (value) => {
     const id = generateUserId(value.email);
-    addUser(id, value);
+    await addUser(id, value);
+    getUsers(dispatch);
     dispatch(changeModalState(false));
   };
 
@@ -31,8 +32,6 @@ const App = () => {
   for (let key in users) {
     arrayUsers.push(users[key].description);
   }
-
-  console.log(arrayUsers);
 
   return (
     <div className="App">
@@ -60,6 +59,7 @@ const App = () => {
       >
         Open Modal
       </button>
+      <Table rows={arrayUsers} />
     </div>
   );
 };

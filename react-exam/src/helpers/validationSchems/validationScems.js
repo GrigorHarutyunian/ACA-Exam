@@ -19,5 +19,5 @@ export const validationSchema = Yup.object().shape({
   radioGroup: Yup.string()
     .oneOf(["male", "female"])
     .required("Please select an option"),
-  validation: Yup.boolean().oneOf([true]).required("click in it"),
+  validation: Yup.boolean("asss").oneOf([true]).required("click in it"),
 });
